@@ -3,7 +3,7 @@
 #include <array>
 #include <vector>
 
-// Uma partida formada com 5 jogadores (um por role)
+// Uma partida formada com 5 jogadores, um por role.
 struct Match {
     int                  id;
     std::array<Player,5> team;  // índice = Role (TOP=0..SUPPORT=4)
@@ -13,7 +13,7 @@ struct Match {
     std::string displayLobby() const;
 };
 
-// Nó da pilha
+// Nó interno da pilha de partidas pendentes de resultado.
 struct MatchNode {
     Match       data;
     MatchNode*  next;
@@ -21,7 +21,7 @@ struct MatchNode {
     explicit MatchNode(const Match& m) : data(m), next(nullptr) {}
 };
 
-// Pilha LIFO — partidas pendentes de resultado (topo = mais recente)
+// Pilha LIFO: guarda as partidas ainda sem resultado, com a mais recente no topo.
 class MatchStack {
 public:
     MatchStack();

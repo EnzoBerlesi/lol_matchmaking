@@ -118,4 +118,4 @@ void showLobby(const MatchStack& stack) {
     std::cout << "\n" << stack.top().displayLobby();
 }
 
-} // namespace Reports
+}

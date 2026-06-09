@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <vector>
 
-// Nó da fila
+// Nó interno da fila de espera dos jogadores.
 struct QueueNode {
     Player      data;
     QueueNode*  next;
@@ -10,7 +10,7 @@ struct QueueNode {
     explicit QueueNode(const Player& p) : data(p), next(nullptr) {}
 };
 
-// Fila FIFO — armazena jogadores que estão procurando partida
+// Fila FIFO: mantém os jogadores na ordem de chegada enquanto aguardam partida.
 class MatchQueue {
 public:
     MatchQueue();

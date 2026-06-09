@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <vector>
 
-// Lista encadeada simples que serve como "banco de dados" em memória
+// Lista encadeada simples que funciona como banco de dados em memória dos jogadores.
 struct PlayerNode {
     Player      data;
     PlayerNode* next;
@@ -27,7 +27,7 @@ public:
     int     size() const;
     bool    empty() const;
 
-    // Copia todos os jogadores para um vector (útil para ordenação)
+    // Copia todos os jogadores para um vector (útil para ordenação e relatórios)
     std::vector<Player> toVector() const;
 
     // Atualiza todos de uma vez após ordenação (usado internamente)

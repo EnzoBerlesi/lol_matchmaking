@@ -4,6 +4,7 @@
 namespace Sorter {
 
 // ── 1. Quick Sort por MMR (DESC) ─────────────────────────────────────────────
+// O(N log N) na prática para priorizar rapidamente os jogadores por skill/MMR.
 
 static int partitionMMR(std::vector<Player>& vec, int low, int high) {
     int pivot = vec[high].mmr;
@@ -27,6 +28,7 @@ void quickSortByMMR(std::vector<Player>& vec, int low, int high) {
 }
 
 // ── 2. Merge Sort por Winrate (DESC) ─────────────────────────────────────────
+// Algoritmo estável: em empates, preserva a ordem original de cadastro.
 
 static void mergeWinrate(std::vector<Player>& vec, int left, int mid, int right) {
     std::vector<Player> L(vec.begin() + left,  vec.begin() + mid + 1);
@@ -51,7 +53,8 @@ void mergeSortByWinrate(std::vector<Player>& vec, int left, int right) {
     }
 }
 
-// ── 3. Insertion Sort por Role (Top=0 … Support=4) ───────────────────────────
+// ── 3. Ordenação do time por Role (Top=0 … Support=4) ───────────────────────
+// O(N²) é aceitável aqui porque cada equipe tem apenas 5 jogadores.
 
 void insertionSortByRole(std::array<Player, 5>& team) {
     for (int i = 1; i < 5; ++i) {
@@ -67,6 +70,7 @@ void insertionSortByRole(std::array<Player, 5>& team) {
 }
 
 // ── 4. Bubble Sort por popularidade de role primária ─────────────────────────
+// Mantém simples a contagem e a exibição das 5 posições do jogo.
 
 std::array<RoleCount, 5> bubbleSortRolePopularity(const std::vector<Player>& allPlayers) {
     std::array<RoleCount, 5> counts = {{
@@ -88,4 +92,4 @@ std::array<RoleCount, 5> bubbleSortRolePopularity(const std::vector<Player>& all
     return counts;
 }
 
-} // namespace Sorter
+}

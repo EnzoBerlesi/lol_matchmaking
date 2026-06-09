@@ -270,4 +270,4 @@ void run(PlayerList& players, MatchQueue& queue,
     }
 }
 
-} // namespace Menu
+}
