@@ -253,7 +253,12 @@ void run(PlayerList& players, MatchQueue& queue,
             << "0. Sair do Programa\n"
             << std::string(68, '=') << "\n"
             << "Escolha uma opcao: ";
-        std::cin >> choice;
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\n[!] Entrada indisponivel. Encerrando o programa.\n";
+            break;
+        }
 
         switch (choice) {
             case 1: handleCadastrarJogador(players);                           break;

@@ -4,7 +4,7 @@
 #include "Matchmaker.h"
 #include "Menu.h"
 
-// Popula a lista com jogadores de exemplo para testes imediatos
+// Popula a lista com jogadores de exemplo para testes imediatos criando seeds
 static void seedPlayers(PlayerList &players)
 {
     struct Seed
