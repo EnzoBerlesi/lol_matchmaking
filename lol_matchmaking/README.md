@@ -1,6 +1,11 @@
 # LoL Matchmaker — C++
 
 Sistema de matchmaking inspirado no League of Legends, rodando 100% no console (CMD).
+Realizado pelos alunos: 
+Bernardo Rodrigues - 2023100357
+Enzo Salles - 2023102306
+Henrique Bicudo - 2023103607
+
 
 ## Pré-requisitos
 
